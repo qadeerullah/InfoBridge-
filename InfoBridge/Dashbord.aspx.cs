@@ -112,7 +112,7 @@ namespace InfoBridge
         void fillGridView()
         {
             SqlConnection con = new SqlConnection(cs);
-            string qurey = "select * from Image";
+            string qurey = "select * from Employee";
             SqlDataAdapter sda = new SqlDataAdapter(qurey, con);
                 DataTable data =new DataTable();
             sda.Fill(data);

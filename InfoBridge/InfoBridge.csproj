@@ -98,6 +98,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AppData\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>

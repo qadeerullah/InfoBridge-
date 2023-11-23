@@ -140,7 +140,14 @@
                     <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
                     <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
                     <asp:BoundField DataField="Dateofbirth" HeaderText="Dateofbirth" SortExpression="Dateofbirth" />
-                    <asp:BoundField DataField="Image" HeaderText="Image" SortExpression="Image" />
+                    <asp:TemplateField HeaderText="Image" SortExpression="Image">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Image") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Image ID="Image1" runat="server" Height="60px" ImageUrl='<%# Eval("Image") %>' />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
                 <FooterStyle BackColor="#CCCCCC" />
                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -153,25 +160,7 @@
             </asp:GridView>
             <br />
             <br />
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:infobridgeConnectionString %>" DeleteCommand="DELETE FROM [Employee] WHERE [Id] = @Id" InsertCommand="INSERT INTO [Employee] ([Name], [Gender], [Address], [Phone], [Dateofbirth]) VALUES (@Name, @Gender, @Address, @Phone, @Dateofbirth)" ProviderName="<%$ ConnectionStrings:infobridgeConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [Employee]" UpdateCommand="UPDATE [Employee] SET [Name] = @Name, [Gender] = @Gender, [Address] = @Address, [Phone] = @Phone, [Dateofbirth] = @Dateofbirth WHERE [Id] = @Id">
-                <DeleteParameters>
-                    <asp:Parameter Name="Id" Type="Int32" />
-                </DeleteParameters>
-                <InsertParameters>
-                    <asp:Parameter Name="Name" Type="String" />
-                    <asp:Parameter Name="Gender" Type="String" />
-                    <asp:Parameter Name="Address" Type="String" />
-                    <asp:Parameter Name="Phone" Type="String" />
-                    <asp:Parameter DbType="Date" Name="Dateofbirth " />
-                </InsertParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="Name" Type="String" />
-                    <asp:Parameter Name="Gender" Type="String" />
-                    <asp:Parameter Name="Address" Type="String" />
-                    <asp:Parameter Name="Phone" Type="String" />
-                    <asp:Parameter DbType="Date" Name="Dateofbirth" />
-                    <asp:Parameter Name="Id" Type="Int32" />
-                </UpdateParameters>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:infobridgeConnectionString %>" SelectCommand="SELECT * FROM [Employee]">
             </asp:SqlDataSource>
             <br />
             </div>
