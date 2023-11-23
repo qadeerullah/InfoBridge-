@@ -137,9 +137,9 @@
                     <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
                     <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                     <asp:BoundField DataField="Gender" HeaderText="Gender" SortExpression="Gender" />
-                    <asp:BoundField DataField="Dateofbirth" HeaderText="Dateofbirth" SortExpression="Dateofbirth" />
-                    <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
                     <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
+                    <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
+                    <asp:BoundField DataField="Dateofbirth" HeaderText="Dateofbirth" SortExpression="Dateofbirth" />
                     <asp:BoundField DataField="Image" HeaderText="Image" SortExpression="Image" />
                 </Columns>
                 <FooterStyle BackColor="#CCCCCC" />
@@ -162,7 +162,7 @@
                     <asp:Parameter Name="Gender" Type="String" />
                     <asp:Parameter Name="Address" Type="String" />
                     <asp:Parameter Name="Phone" Type="String" />
-                    <asp:Parameter DbType="Date" Name="Dateofbirth" />
+                    <asp:Parameter DbType="Date" Name="Dateofbirth " />
                 </InsertParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="Name" Type="String" />
